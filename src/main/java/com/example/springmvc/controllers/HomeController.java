@@ -32,7 +32,7 @@ public class HomeController {
         return "add";
     }
 
-    @GetMapping("/edit/${id}")
+    @GetMapping("/edit/{id}")
     public String edit_form(@PathVariable(value = "id") long id, Model model) {
         Optional<DebateRegistration> debateRegistrationOp = drRepo.findById(id);
         DebateRegistration debateRegistration = debateRegistrationOp.get();
@@ -44,7 +44,7 @@ public class HomeController {
     public String save(@ModelAttribute DebateRegistration registration, HttpSession session) {
         drRepo.save(registration);
         session.setAttribute("msg", "Registration added successfully...");
-        return "redirect:/add";
+        return "redirect:/";
     }
 
     @PostMapping("/update")
