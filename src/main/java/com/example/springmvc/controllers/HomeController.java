@@ -53,4 +53,11 @@ public class HomeController {
         session.setAttribute("msg", "Registration updated successfully...");
         return "redirect:/";
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable(value = "id") long id, HttpSession session) {
+        drRepo.deleteById(id);
+        session.setAttribute("msg", "Registration deleted successfully...");
+        return "redirect:/";
+    }
 }
