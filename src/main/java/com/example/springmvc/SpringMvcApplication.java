@@ -1,5 +1,6 @@
 package com.example.springmvc;
 
+import com.example.springmvc.entities.DebateRegistration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
